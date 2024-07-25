@@ -5,7 +5,7 @@ Welcome to the Murder Mystery Game! This web-based game challenges players to so
 ## Live Demo
 
 You can play the game by visiting the following link:
-[Play The Game](http://example.com)
+[Play The Game](https://sql-game.onrender.com)
 
 ## Features
 
