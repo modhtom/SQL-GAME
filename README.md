@@ -5,7 +5,7 @@ Welcome to the Murder Mystery Game! This web-based game challenges players to so
 ## Live Demo
 
 You can play the game by visiting the following link:
-[Play The Game](http://example.com)
+[Play The Game](https://modhtom32.pythonanywhere.com/guess)
 
 ## Features
 
@@ -14,7 +14,9 @@ You can play the game by visiting the following link:
 - **Database-Driven:** Built with SQLite to manage game data, including guests, financial records, and more.
 
 ## Contributing
+
 If you’d like to contribute to the project, please fork the repository and submit a pull request. Ensure your changes are well-documented and tested.
 
 ## Contact
-For any questions or issues, please contact at sql@modhtom.com
+
+For any questions or issues, please contact at Mohamed.H.Abdalgader@gmail.com

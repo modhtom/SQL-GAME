@@ -24,56 +24,60 @@ def root_dir():
 def home():
     return render_template("home.html")
 
-@app.route('/execute', methods=['POST'])
+
+@app.route("/execute", methods=["POST"])
 def execute():
-    query = request.form['query']
-    result = ''
+    query = request.form["query"]
+    result = ""
     try:
-        conn = sqlite3.connect('game.db')
+        conn = sqlite3.connect("game.db")
         cursor = conn.cursor()
         cursor.execute(query)
         rows = cursor.fetchall()
         columns = [description[0] for description in cursor.description]
         conn.commit()
         conn.close()
-        
+
         if rows:
             result = '<table border="1"><tr>'
             for column in columns:
-                result += f'<th>{column}</th>'
-            result += '</tr>'
+                result += f"<th>{column}</th>"
+            result += "</tr>"
             for row in rows:
-                result += '<tr>'
+                result += "<tr>"
                 for cell in row:
-                    result += f'<td>{cell}</td>'
-                result += '</tr>'
-            result += '</table>'
+                    result += f"<td>{cell}</td>"
+                result += "</tr>"
+            result += "</table>"
         else:
-            result = 'No results found.'
+            result = "No results found."
     except Exception as e:
         result = str(e)
-    
-    return render_template('home.html', result=result, query=query)
+
+    return render_template("home.html", result=result, query=query)
 
 
-@app.route('/guess', methods=['POST'])
+@app.route("/guess", methods=["POST"])
 def Guess():
-    guess_name = request.form['Guess'].strip()
-    result = ''
-    
+    guess_name = request.form["Guess"].strip()
+    result = ""
+
     try:
-        conn = sqlite3.connect('game.db')
+        conn = sqlite3.connect("game.db")
         cursor = conn.cursor()
-        
-        cursor.execute("""
+
+        cursor.execute(
+            """
             SELECT IsCorrect 
             FROM Solutions 
             WHERE GuestName is ?;
-        """, (guess_name,))
-        
+        """,
+            (guess_name,),
+        )
+
         row = cursor.fetchone()
         conn.close()
-        
+
         if row:
             is_correct = row[0]
             if is_correct:
@@ -82,12 +86,13 @@ def Guess():
                 result = "That's not the right person. Try again!"
         else:
             result = "No such person found. Please try again with a valid name."
-    
+
     except Exception as e:
         result = str(e)
-    
-    return render_template('home.html', result2=result)
+
+    return render_template("home.html", result2=result)
+
 
 if __name__ == "__main__":
     game()
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0")
