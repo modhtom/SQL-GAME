@@ -2,7 +2,7 @@
 
 Welcome to the Murder Mystery Game! This web-based game challenges players to solve a murder mystery using clues from various sources, including guest interviews, financial records, and security footage. The game is built with Flask and SQLite.
 
-<## Live Demo
+## Live Demo
 
 You can play the game by visiting the following link:
 [Play The Game](https://modhtom32.pythonanywhere.com/guess)
