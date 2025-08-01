@@ -14,7 +14,7 @@
     <p>Isabella Hawthorne, a beloved figure in Elderwood, was set to inherit her family’s vast fortune and estate. But on the night of her 21th birthday party, she disappeared without a trace. The guests at the party included close family members, friends, and even a few business associates. Each of them had a motive, but the clues are as elusive as Isabella herself.
         Your task as the investigator is to use your SQL skills to sift through various pieces of evidence and uncover the truth. You’ll need to query the database of the Hawthorne estate’s records, interviews, and financial transactions to piece together what happened on that fateful night.</p>
     <img src="/static/schema diagram.png">
-    <form action="/execute" method="post">
+    <form action="/execute_case1" method="post">
         <textarea name="query" rows="10" cols="50" placeholder="Enter your SQL query here...">{{ query }}</textarea><br>
         <input type="submit" value="Execute">
         <h1>Query Results</h1>
@@ -22,16 +22,11 @@
     </form>
 
     <h1>Check If Your Guess Is Correct</h1>
-    <form action="/guess" method="post">
+    <form action="/guess_case1" method="post">
         <textarea name="Guess" rows="2" cols="50" placeholder="Enter the name of the person you think is the killer here... (write the full name)"></textarea><br>
         <input type="submit" value="Submit Guess">
         <h1>Query Results</h1>
         <div>{{ result2|safe }}</div>
     </form>
-    <footer>
-    <p>
-        <a href="https://github.com/modhtom/SQL-GAME" target="_blank">Repo</a>
-    </p>
-    </footer>
 </body>
 </html>

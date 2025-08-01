@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Riddle of the Retaliant Reporter</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+</head>
+<body>
+    <h1>The Riddle of the Retaliant Reporter</h1>
+    <h1>Background</h1>
+    <p>Months after you solved the disappearance of Isabella Hawthorne, a new tragedy strikes Elderwood. Frank Miller, a reporter who was instrumental in uncovering the truth, has been found murdered in his office. He was known for his sharp instincts and was rumored to be working on a story that would once again rock the Hawthorne family.</p>
+    <h1>Storyline</h1>
+    <p>Frank's death seems too coincidental. Was he silenced by someone seeking revenge, or did he unearth a conspiracy that led to his demise? The crime scene is littered with clues—phone records, office logs, and drafts of his final article. It's up to you to query the new database and find the killer before they can cover their tracks for good.</p>
+    <img src="/static/schema2.png" alt="Database Schema for Case 2">
+    <form action="/execute_case2" method="post">
+        <textarea name="query" rows="10" cols="50" placeholder="Enter your SQL query here...">{{ query }}</textarea><br>
+        <input type="submit" value="Execute">
+        <h1>Query Results</h1>
+        <div>{{ result|safe }}</div>
+    </form>
+
+    <h1>Check If Your Guess Is Correct</h1>
+    <form action="/guess_case2" method="post">
+        <textarea name="Guess" rows="2" cols="50" placeholder="Enter the name of the person you think is the killer here... (write the full name)"></textarea><br>
+        <input type="submit" value="Submit Guess">
+        <h1>Query Results</h1>
+        <div>{{ result2|safe }}</div>
+    </form>
+</body>
+</html>
